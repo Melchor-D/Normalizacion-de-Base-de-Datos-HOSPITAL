@@ -9,8 +9,6 @@ Si la tabla no tuviera CitaID, podrías usar una clave compuesta, por ejemplo:
 - FechaCIT
 
 Identificar las Dependencias Funcionales Existentes.
------------
-
 PacienteID determina los datos del paciente  
 1. PacienteID → NombrePaciente, TelefonoPaciente, CiudadPaciente
 ![alt text](<Captura de pantalla 2026-06-12 012032.png>)
@@ -40,4 +38,32 @@ CitaID → MedicoID → NombreMedico
 CitaID → MedicoID → Especialidad  
 CitaID → Consultorio → PisoConsultorio  
 CitaID → PacienteID → NombrePaciente  
-La tabla NO cumple la Tercera Forma Normal (3FN) porque existen dependencias transitivas entre los atributos. Los datos de pacientes, médicos y consultorios deberían almacenarse en tablas separadas para evitar redundancia y anomalías de actualización.
+La tabla NO cumple la Tercera Forma Normal (3FN) porque existen dependencias transitivas entre los atributos. Los datos de pacientes, médicos y consultorios deberían almacenarse en tablas separadas para evitar redundancia y anomalías de actualización.                         
+
+
+
+
+
+Dibujar el esquema final de tablas.
+Identificar claves primarias y foráneas.
+-
+![alt text](<Captura de pantalla 2026-06-12 024541.png>)
+
+
+
+
+Respuesta lista para pegar en la tarea
+
+Claves Primarias:
+
+PACIENTE:   
+PacienteID
+MEDICO: MedicoID
+CONSULTORIO: ConsultorioID
+CITA: CitaID
+
+Claves Foráneas:  
+CITA.PacienteID → PACIENTE.PacienteID   
+CITA.MedicoID → MEDICO.MedicoID  
+MEDICO.ConsultorioID → CONSULTORIO.ConsultorioID
+
